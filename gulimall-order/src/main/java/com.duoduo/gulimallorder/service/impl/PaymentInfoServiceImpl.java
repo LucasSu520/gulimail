@@ -2,7 +2,6 @@ package com.duoduo.gulimallorder.service.impl;
 
 import com.duoduo.common.utils.PageUtils;
 import com.duoduo.common.utils.Query;
-import com.duoduo.common.utils.PageUtils;
 import com.duoduo.gulimallorder.dao.PaymentInfoDao;
 import com.duoduo.gulimallorder.entity.PaymentInfoEntity;
 import com.duoduo.gulimallorder.service.PaymentInfoService;
