@@ -8,6 +8,7 @@ import com.duoduo.gulimallmember.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -25,7 +26,7 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @Autowired
+    @Resource
     CouponFeignService couponFeignService;
 
     @RequestMapping("/coupons")

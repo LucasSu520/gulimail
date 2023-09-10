@@ -2,8 +2,7 @@ server:
   port: 8005
 
 spring:
-  datasource:
-    username: root
-    password: root
-    url: jdbc:mysql://192.168.41.128:3306/gulimall_sms
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.41.128:8848

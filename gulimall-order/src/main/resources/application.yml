@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.41.128:3306/gulimall_oms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: Oeder-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.41.128:8848
