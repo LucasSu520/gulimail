@@ -11,9 +11,14 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.duoduo.common.utils.PageUtils;
 import com.duoduo.common.utils.Query;
 
+import javax.annotation.Resource;
+
 
 @Service("brandService")
 public class BrandServiceImpl extends ServiceImpl<BrandDao, BrandEntity> implements BrandService {
+
+    @Resource
+    private BrandDao brandDao;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {

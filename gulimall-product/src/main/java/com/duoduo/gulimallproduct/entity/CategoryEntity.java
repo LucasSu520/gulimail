@@ -2,12 +2,18 @@ package com.duoduo.gulimallproduct.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.List;
 
+import com.duoduo.common.valid.ListValue;
 import lombok.Data;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
  * 商品三级分类
@@ -29,6 +35,7 @@ public class CategoryEntity implements Serializable {
 	/**
 	 * 分类名称
 	 */
+	@NotBlank(message = "品牌名称不能为空")
 	private String name;
 	/**
 	 * 父分类id
@@ -41,10 +48,13 @@ public class CategoryEntity implements Serializable {
 	/**
 	 * 是否显示[0-不显示，1显示]
 	 */
+	@ListValue(vals = {0, 1})
+	@TableLogic(value = "1", delval = "0")
 	private Integer showStatus;
 	/**
 	 * 排序
 	 */
+	@Min(value = 0, message = "排序最小为0")
 	private Integer sort;
 	/**
 	 * 图标地址

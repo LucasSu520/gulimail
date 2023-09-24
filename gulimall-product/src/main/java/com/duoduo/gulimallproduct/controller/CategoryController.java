@@ -12,6 +12,7 @@ import com.duoduo.gulimallproduct.service.CategoryService;
 import com.duoduo.common.utils.PageUtils;
 import com.duoduo.common.utils.R;
 
+import javax.validation.Valid;
 
 
 /**
@@ -58,7 +59,7 @@ public class CategoryController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody CategoryEntity category){
+    public R save(@Valid @RequestBody CategoryEntity category){
 		categoryService.save(category);
 
         return R.ok();
@@ -67,8 +68,8 @@ public class CategoryController {
     /**
      * 修改
      */
-    @RequestMapping("/update")
-    public R update(@RequestBody CategoryEntity category){
+    @PostMapping("/update")
+    public R update(@RequestBody @Valid CategoryEntity category){
 		categoryService.updateById(category);
 
         return R.ok();
