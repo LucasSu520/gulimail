@@ -23,7 +23,7 @@ import javax.validation.Valid;
  * @date 2023-08-06 16:00:51
  */
 @RestController
-@RequestMapping("gulimallproduct/category")
+@RequestMapping("product/category")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;

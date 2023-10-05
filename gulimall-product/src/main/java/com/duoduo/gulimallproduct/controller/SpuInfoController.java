@@ -25,7 +25,7 @@ import com.duoduo.common.utils.R;
  * @date 2023-08-06 16:00:51
  */
 @RestController
-@RequestMapping("gulimallproduct/spuinfo")
+@RequestMapping("product/spuinfo")
 public class SpuInfoController {
     @Autowired
     private SpuInfoService spuInfoService;

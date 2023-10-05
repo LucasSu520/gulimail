@@ -25,7 +25,7 @@ import com.duoduo.common.utils.R;
  * @date 2023-08-06 16:00:51
  */
 @RestController
-@RequestMapping("gulimallproduct/commentreplay")
+@RequestMapping("product/commentreplay")
 public class CommentReplayController {
     @Autowired
     private CommentReplayService commentReplayService;

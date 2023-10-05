@@ -30,7 +30,7 @@ public class ProductExceptionControllerAdvice {
 
     @ExceptionHandler(value = Exception.class)
     public R handException(Throwable throwable){
-        log.error("发生了不可预知的异常, {}", throwable.getMessage());
+        log.error("发生了不可预知的异常, {}", throwable.getMessage(), throwable);
         return R.error();
     }
 }

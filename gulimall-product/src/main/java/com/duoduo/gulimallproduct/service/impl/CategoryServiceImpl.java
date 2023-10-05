@@ -46,6 +46,22 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
                 .sorted(Comparator.comparingInt(CategoryEntity::getSort)).collect(Collectors.toList());
     }
 
+    @Override
+    public Long[] findCatelogPath(Long catelogId) {
+        List<Long> paths = new ArrayList<>();
+        List<Long> pathPath = findParentPath(catelogId, paths);
+        return pathPath.toArray(new Long[pathPath.size()]);
+    }
+
+    private List<Long> findParentPath(Long catelogId, List<Long> paths){
+        CategoryEntity byId = this.getById(catelogId);
+        if(byId.getParentCid() != 0){
+            findParentPath(byId.getParentCid(), paths);
+        }
+        paths.add(catelogId);
+        return paths;
+    }
+
     private List<CategoryEntity> getChildren(CategoryEntity categoryEntity, List<CategoryEntity> categoryEntities) {
         return categoryEntities.stream()
                 .filter(entity -> entity.getParentCid().equals(categoryEntity.getCatId()))
